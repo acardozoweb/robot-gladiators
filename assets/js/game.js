@@ -7,22 +7,18 @@ var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-// fight function
-var fight = function(enemyName) {
-
-
-
-
 // Game States
 // "WIN" - Player robot has defeated all enemy robots
 //    * Fight all enemy robots
 //    *Defeat all enemy robots
 // "LOSE" - Player robot's health is zero or less
 
+// fight function
+var fight = function(enemyName) {
+// repeat and excute as long as the enemy robot is still alive
+while(enemyHealth > 0) {
 
-  // Alert the player that thy are starting the round
-  window.alert("Welcome to Robot Gladiators!");
-
+  
   // ask player if they'd like to fighty or skip
   var promptFight = window.prompt(
     "Would you like to FIGHT or SKIP? Enter 'FIGHT' or 'SKIP' to choose."
@@ -89,8 +85,14 @@ var fight = function(enemyName) {
   } else {
     window.alert("You need to pick a valid option. Try Again!");
   }
-};
+}; // this ends the fight function
+
+} // this closes the while loop
+
+
 
 for(var i = 0; i < enemyNames.length; i++) {
-  fight(enemyNames[i]);
+  var pickedEnemyName = enemyNames[i];
+  enemyHealth = 50
+  fight(pickedEnemyName);
 }
